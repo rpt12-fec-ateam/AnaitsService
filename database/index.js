@@ -39,7 +39,13 @@ connection.query('CREATE TABLE IF NOT EXISTS descriptionInfo (id INT NOT NULL AU
   }
 });
 
-
+connection.query('LOAD DATA LOCAL INFILE "/Users/Anait/Desktop/RPT12/AnaitsService/database/MOCK_DATA.csv" INTO TABLE descriptionInfo ', function(err, data) {
+  if (err) {
+    console.log('ERROR', err)
+  } else {
+    console.log(null, data)
+  }
+})
 
 
 module.exports = connection;
