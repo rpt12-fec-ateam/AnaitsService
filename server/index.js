@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.get('/test', (req, res) => {
   connection.query('SELECT * FROM descriptionInfo', (err, data) => {
     if (err) {
-      consolw.log(err, null);
+      console.log(err, null);
     } else {
       //console.log(null, data);
       res.send(data)
