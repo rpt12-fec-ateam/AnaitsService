@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import _ from 'lodash';
 
@@ -22,7 +21,6 @@ class App extends React.Component {
         }
       },
       success: (data) => {
-        console.log(data);
         let itemIndex = _.random(0, data.length) //use lodash
         console.log('Item Index', itemIndex)
         this.setState ({
@@ -40,20 +38,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className = "name">
         <h1>Description</h1>
-        {/* {console.log('this.state.data', this.state.data)} */}
-       
         {this.state.singleItem 
           ? 
           <div> 
-             {console.log('this.state.data', this.state.singleItem.description)}
+
             <div>{this.state.singleItem.name}</div>
             <div>{this.state.singleItem.category}</div>
-           <div>{this.state.singleItem.stars}</div>
-           <div>{this.state.singleItem.reviews}</div>
-           <div>{this.state.singleItem.taste}</div>
-           <div>{this.state.singleItem.description}</div>
+            <div>{this.state.singleItem.stars}</div>
+            <div>{this.state.singleItem.reviews}</div>
+            <div>{this.state.singleItem.taste}</div>
+            <div>{this.state.singleItem.description}</div>
           
           </ div> 
           : 
@@ -75,6 +71,4 @@ class App extends React.Component {
     )
   }
 }
-ReactDOM.render(
-  <App></App>,document.getElementById('app')
-)
+export default App;

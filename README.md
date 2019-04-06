@@ -17,7 +17,8 @@
 
 ## Usage
 
-> Some usage instructions
+> To seed the database run: npm seed run
+
 
 ## Requirements
 
