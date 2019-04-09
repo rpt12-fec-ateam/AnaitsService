@@ -1,4 +1,4 @@
 module.exports = {
   verbose: true,
-  transformIgnorePatterns: ['<rootDir>/node_modules/']
+  //transformIgnorePatterns: ['<rootDir>/node_modules/']
 };

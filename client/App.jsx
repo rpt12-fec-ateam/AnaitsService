@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import $ from 'jquery';
 import _ from 'lodash';
+import Stars from './stars.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <div className = "name">
+      {console.log('Hello')}
         <h1>Description</h1>
         {this.state.singleItem 
           ? 
@@ -46,7 +49,8 @@ class App extends React.Component {
 
             <div>{this.state.singleItem.name}</div>
             <div>{this.state.singleItem.category}</div>
-            <div>{this.state.singleItem.stars}</div>
+            
+            <div> <Stars stars={parseInt(this.state.singleItem.stars)}/></div>
             <div>{this.state.singleItem.reviews}</div>
             <div>{this.state.singleItem.taste}</div>
             <div>{this.state.singleItem.description}</div>
@@ -71,4 +75,5 @@ class App extends React.Component {
     )
   }
 }
-export default App;
+ //export default App;
+ReactDOM.render(<App/>, document.getElementById('app'));
