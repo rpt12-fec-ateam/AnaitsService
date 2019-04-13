@@ -1,5 +1,6 @@
 
 const connection = require('./index.js')
+const path = _dirname + '/MOCK_DATA.csv'
 //create database
 connection.query('CREATE DATABASE IF NOT EXISTS description', function(err, data) {
   if(err) {
@@ -27,7 +28,7 @@ connection.query('CREATE TABLE IF NOT EXISTS descriptionInfo ( id INT NOT NULL A
 });
 
 //load data into database from mockdata file
-connection.query('LOAD DATA LOCAL INFILE "/Users/Anait/Desktop/RPT12/AnaitsService/database/MOCK_DATA.csv" INTO TABLE descriptionInfo FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 ROWS (id, name, category, stars, reviews, taste, description )', function(err, data) {
+connection.query('LOAD DATA LOCAL INFILE "'+ path +'" INTO TABLE descriptionInfo FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 ROWS (id, name, category, stars, reviews, taste, description )', function(err, data) {
   if (err) {
     console.log('ERROR', err)
   } else {
