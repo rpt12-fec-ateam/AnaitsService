@@ -28,7 +28,7 @@ const Category = styled.div`
   margin-bottom: 15px;
 `;
 
-const Reviews = styled.div`
+const Review = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Space+Mono');
   display: inline-block;
   padding-left: 5px;
@@ -102,9 +102,9 @@ class App extends React.Component {
             <Category>
             <div>{this.state.singleItem.category}</div>
             </Category>
-            <Reviews>
+            <Review>
             <div><Stars stars={parseInt(this.state.singleItem.stars)}/>  {this.state.singleItem.reviews}   reviews </div>
-            </Reviews>
+            </Review>
             <Taste>
             <div>{this.state.singleItem.taste}</div>
             </Taste>
